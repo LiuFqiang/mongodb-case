@@ -1,7 +1,13 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://127.0.0.1:27017/test
+      uri: mongodb://127.0.0.1:27017/quark
+  thymeleaf:
+    enabled: true
+    servlet:
+      content-type: text/html
+    prefix: classpath:/templates/
+    suffix: .html
 
 logging:
   level:
@@ -10,3 +16,6 @@ logging:
         data:
           mongodb:
             core: DEBUG
+
+
+

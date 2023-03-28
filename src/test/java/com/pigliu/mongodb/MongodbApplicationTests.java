@@ -2,6 +2,8 @@ package com.pigliu.mongodb;
 
 import com.pigliu.mongodb.dao.BookMongoRepository;
 import com.pigliu.mongodb.dto.BookInfo;
+import com.pigliu.mongodb.dto.mongo.QuickPage;
+import com.pigliu.mongodb.service.QuickH5Service;
 import lombok.val;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,7 @@ import org.springframework.util.Assert;
 import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -33,6 +36,9 @@ class MongodbApplicationTests {
 
     @Autowired
     private BookMongoRepository bookMongoRepository;
+
+    @Autowired
+    private QuickH5Service quickH5Service;
 
     @Test
     void contextLoads() {
@@ -123,5 +129,12 @@ class MongodbApplicationTests {
 
     @Test
     void update() {
+    }
+
+    @Test
+    void findH5Page() {
+        Optional<QuickPage> byId = quickH5Service.findById("641970d6cdaa736cc89e0c9b");
+        System.out.println(1);
+
     }
 }
